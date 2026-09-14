@@ -24,3 +24,12 @@ env/
 .vscode/
 .idea/
 .DS_Store
+
+#Antigravity
+AGENTS.md
+implementation_plan.md
+task.md
+walkthrough.md
+.agent/
+.antigravity/
+knowledge_items.md
