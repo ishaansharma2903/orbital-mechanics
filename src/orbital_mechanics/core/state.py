@@ -54,9 +54,9 @@ class State:
         if h < EPSILON:
             raise ValueError("Angular momentum ~0; rectilinear trajectory has no classical elements.")
 
-        # Semi-major axis (vis-viva); guard the parabolic case
-        energy_term = 2 / r - v ** 2 / mu
-        a = np.inf if abs(energy_term) < EPSILON else 1 / energy_term
+        # Semi-major axis (vis-viva); guard the parabolic case using dimensionless ratio
+        energy_term = 2.0 / r - v ** 2 / mu
+        a = np.inf if abs(energy_term * r) < EPSILON else 1.0 / energy_term
 
         # Inclination
         i = np.arccos(np.clip(h_vec[2] / h, -1.0, 1.0))
