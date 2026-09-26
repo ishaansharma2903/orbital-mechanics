@@ -1,4 +1,6 @@
-# orbital-mechanics
+# polaris
+
+**P**atched-conic **O**rbital **L**ambert **A**nd **R**apid **I**nterplanetary **S**olver
 
 A fast, first-principles Python astrodynamics library for **preliminary interplanetary trajectory design**, multi-gravity-assist (MGA) mission planning, and $\Delta v$ budgeting. 
 
@@ -34,8 +36,8 @@ Every algorithm is implemented from fundamental Keplerian mechanics, tested agai
 ## Installation
 
 ```bash
-git clone https://github.com/ishaansharma2903/orbital-mechanics.git
-cd orbital-mechanics
+git clone https://github.com/ishaansharma2903/polaris.git
+cd polaris
 python -m venv .venv
 source .venv/bin/activate  # Windows: .venv\Scripts\activate
 pip install -e ".[dev]"
@@ -48,7 +50,7 @@ pip install -e ".[dev]"
 ### 1. Classical Orbital Elements
 ```python
 import numpy as np
-from orbital_mechanics import State, MU_EARTH
+from polaris import State, MU_EARTH
 
 state = State(position=[-6045, -3490, 2500], velocity=[-3.457, 6.618, 2.533])
 elements = state.to_orbit_elements(mu=MU_EARTH)
@@ -61,7 +63,7 @@ print(f"Inclination: {np.degrees(elements.i):.2f} deg")
 ### 2. Universal-Variable Lambert Solver
 ```python
 import numpy as np
-from orbital_mechanics import solve_lambert, MU_EARTH
+from polaris import solve_lambert, MU_EARTH
 
 r1 = np.array([5000.0, 10000.0, 2100.0])
 r2 = np.array([-14600.0, 2500.0, 7000.0])
@@ -74,7 +76,7 @@ print("Arrival velocity:", v2)
 
 ### 3. Interplanetary Transfer & Porkchop Analysis
 ```python
-from orbital_mechanics import solve_single_leg, generate_porkchop
+from polaris import solve_single_leg, generate_porkchop
 
 # Single leg transfer (Mars 2020 Perseverance launch window)
 transfer = solve_single_leg(
@@ -100,7 +102,7 @@ print("Minimum C3 in window:", np.nanmin(porkchop.c3))
 
 ### 4. Multi-Gravity-Assist (MGA) Sequence & GMAT Bridge
 ```python
-from orbital_mechanics import solve_mga_trajectory, export_to_gmat_script
+from polaris import solve_mga_trajectory, export_to_gmat_script
 
 bodies = ["earth", "venus", "mercury"]
 epochs = ["2004-08-03", "2005-04-01", "2005-10-01"]
@@ -117,7 +119,7 @@ gmat_script = export_to_gmat_script(traj, output_path="mga_mission.script", spac
 ## Running Tests
 
 ```bash
-pytest -v --cov=orbital_mechanics
+pytest -v --cov=polaris
 ```
 
 All 72 tests pass with 99% test coverage across all modules.

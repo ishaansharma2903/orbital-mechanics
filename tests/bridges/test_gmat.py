@@ -7,7 +7,7 @@ import os
 import pytest
 import numpy as np
 
-from orbital_mechanics import (
+from polaris import (
     get_body_state,
     solve_single_leg,
     solve_dsm_leg,

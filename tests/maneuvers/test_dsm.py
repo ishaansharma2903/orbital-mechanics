@@ -6,10 +6,10 @@ Unit and validation tests for deep-space maneuver (DSM) transfers.
 import pytest
 import numpy as np
 
-from orbital_mechanics.constants import MU_SUN, AU
-from orbital_mechanics.core.state import State
-from orbital_mechanics.maneuvers.dsm import DSMTransfer, solve_dsm_leg
-from orbital_mechanics.maneuvers.lambert import solve_lambert
+from polaris.constants import MU_SUN, AU
+from polaris.core.state import State
+from polaris.maneuvers.dsm import DSMTransfer, solve_dsm_leg
+from polaris.maneuvers.lambert import solve_lambert
 
 
 def test_solve_dsm_leg_broken_plane():

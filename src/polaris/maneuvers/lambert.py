@@ -10,7 +10,7 @@ Works across elliptic, parabolic, and hyperbolic trajectories.
 from typing import Optional
 import numpy as np
 
-from orbital_mechanics.constants import EPSILON, MU_SUN
+from polaris.constants import EPSILON, MU_SUN
 
 
 def _stumpff_c2(psi: float) -> float:

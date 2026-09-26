@@ -14,7 +14,7 @@ Reference:
 import pytest
 import numpy as np
 
-from orbital_mechanics import (
+from polaris import (
     State,
     solve_flyby,
     solve_single_leg,

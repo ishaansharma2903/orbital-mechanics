@@ -3,7 +3,7 @@ ephemeris
 
 Ephemeris retrieval interfaces for celestial bodies.
 """
-from orbital_mechanics.ephemeris.horizons import (
+from polaris.ephemeris.horizons import (
     get_body_state,
     get_body_states_batch,
     parse_epoch,

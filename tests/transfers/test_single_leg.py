@@ -6,7 +6,7 @@ Unit and benchmark validation tests for single-leg patched-conic transfers.
 import pytest
 import numpy as np
 
-from orbital_mechanics.constants import (
+from polaris.constants import (
     MU_SUN,
     MU_EARTH,
     MU_MARS,
@@ -14,8 +14,8 @@ from orbital_mechanics.constants import (
     R_MARS,
     AU,
 )
-from orbital_mechanics.core.state import State
-from orbital_mechanics.transfers.single_leg import solve_single_leg, SingleLegTransfer
+from polaris.core.state import State
+from polaris.transfers.single_leg import solve_single_leg, SingleLegTransfer
 
 
 def test_solve_single_leg_mars_2020():

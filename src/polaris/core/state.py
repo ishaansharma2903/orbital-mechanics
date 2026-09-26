@@ -14,7 +14,7 @@ from dataclasses import dataclass, field
 from typing import NamedTuple
 import numpy as np
 
-from orbital_mechanics.constants import MU_EARTH, EPSILON
+from polaris.constants import MU_EARTH, EPSILON
 
 
 class OrbitalElements(NamedTuple):

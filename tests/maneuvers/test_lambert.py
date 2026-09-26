@@ -1,12 +1,12 @@
 """
 tests/maneuvers/test_lambert.py
 
-Validation suite for orbital_mechanics.maneuvers.lambert.
+Validation suite for polaris.maneuvers.lambert.
 """
 import numpy as np
 import pytest
 
-from orbital_mechanics import (
+from polaris import (
     State,
     OrbitalElements,
     elements_to_state,

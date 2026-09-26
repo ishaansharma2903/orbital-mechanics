@@ -11,7 +11,7 @@ import datetime
 import numpy as np
 from astropy.time import Time
 
-from orbital_mechanics.constants import (
+from polaris.constants import (
     MU_SUN,
     MU_EARTH,
     MU_VENUS,
@@ -22,10 +22,10 @@ from orbital_mechanics.constants import (
     R_MERCURY,
     R_MARS,
 )
-from orbital_mechanics.ephemeris.horizons import parse_epoch, get_body_state
-from orbital_mechanics.maneuvers.dsm import DSMTransfer, solve_dsm_leg
-from orbital_mechanics.maneuvers.flyby import FlybyResult, solve_flyby
-from orbital_mechanics.transfers.single_leg import SingleLegTransfer, solve_single_leg
+from polaris.ephemeris.horizons import parse_epoch, get_body_state
+from polaris.maneuvers.dsm import DSMTransfer, solve_dsm_leg
+from polaris.maneuvers.flyby import FlybyResult, solve_flyby
+from polaris.transfers.single_leg import SingleLegTransfer, solve_single_leg
 
 # Standard planetary body physical properties (mu, equatorial_radius)
 PLANETARY_PARAMS: Dict[str, Tuple[float, float]] = {

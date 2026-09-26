@@ -1,12 +1,12 @@
 """
 tests/core/test_state.py
 
-Test suite for orbital_mechanics.core.state.State.
+Test suite for polaris.core.state.State.
 """
 import numpy as np
 import pytest
 
-from orbital_mechanics import State, OrbitalElements, elements_to_state, MU_EARTH
+from polaris import State, OrbitalElements, elements_to_state, MU_EARTH
 
 ATOL_ANGLE = 1e-6   # rad
 ATOL_LEN = 1e-6      # km / (km/s)

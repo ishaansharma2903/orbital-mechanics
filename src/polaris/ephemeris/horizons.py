@@ -12,8 +12,8 @@ import numpy as np
 from astropy.time import Time
 from astroquery.jplhorizons import Horizons
 
-from orbital_mechanics.constants import AU, DAY_TO_SEC
-from orbital_mechanics.core.state import State
+from polaris.constants import AU, DAY_TO_SEC
+from polaris.core.state import State
 
 # Standard body aliases -> JPL Horizons target IDs
 # Planet centers (e.g. 399 for Earth) or barycenters

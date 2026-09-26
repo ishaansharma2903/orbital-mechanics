@@ -6,7 +6,7 @@ Unit and validation tests for hyperbolic gravity-assist (flyby) kinematics.
 import pytest
 import numpy as np
 
-from orbital_mechanics.constants import (
+from polaris.constants import (
     MU_EARTH,
     MU_SUN,
     MU_VENUS,
@@ -14,7 +14,7 @@ from orbital_mechanics.constants import (
     R_VENUS,
     AU,
 )
-from orbital_mechanics.maneuvers.flyby import (
+from polaris.maneuvers.flyby import (
     FlybyResult,
     solve_flyby,
     compute_flyby_turn_angle,

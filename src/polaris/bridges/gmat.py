@@ -8,9 +8,9 @@ trajectory initial states, encounter epochs, and impulsive maneuvers (DSMs/flyby
 from typing import Optional, Union
 from astropy.time import Time
 
-from orbital_mechanics.transfers.single_leg import SingleLegTransfer
-from orbital_mechanics.maneuvers.dsm import DSMTransfer
-from orbital_mechanics.transfers.multi_leg import MGATrajectory
+from polaris.transfers.single_leg import SingleLegTransfer
+from polaris.maneuvers.dsm import DSMTransfer
+from polaris.transfers.multi_leg import MGATrajectory
 
 
 def _jd_to_gmat_utc(jd: float) -> str:

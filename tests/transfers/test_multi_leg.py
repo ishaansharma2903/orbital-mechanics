@@ -6,7 +6,7 @@ Unit and validation tests for Multi-Gravity-Assist (MGA) trajectory assembly.
 import pytest
 import numpy as np
 
-from orbital_mechanics.constants import (
+from polaris.constants import (
     MU_SUN,
     MU_EARTH,
     MU_VENUS,
@@ -16,7 +16,7 @@ from orbital_mechanics.constants import (
     R_MERCURY,
     AU,
 )
-from orbital_mechanics.transfers.multi_leg import (
+from polaris.transfers.multi_leg import (
     MGATrajectory,
     solve_mga_trajectory,
     get_body_params,

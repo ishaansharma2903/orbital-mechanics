@@ -6,13 +6,13 @@ Unit and validation tests for MGA trajectory optimization.
 import pytest
 import numpy as np
 
-from orbital_mechanics.constants import (
+from polaris.constants import (
     MU_EARTH,
     MU_MARS,
     R_EARTH,
     R_MARS,
 )
-from orbital_mechanics.optimization.mga_optimizer import (
+from polaris.optimization.mga_optimizer import (
     MGAOptimizationResult,
     optimize_mga_epochs,
 )

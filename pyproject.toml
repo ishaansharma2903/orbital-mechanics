@@ -3,9 +3,9 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "orbital-mechanics"
+name = "polaris"
 version = "0.1.0"
-description = "A Python library for orbital mechanics, mission design, and trajectory optimization"
+description = "A Python library for preliminary interplanetary trajectory design and multi-gravity-assist mission planning"
 readme = "README.md"
 requires-python = ">=3.10"
 license = { text = "MIT" }
@@ -28,7 +28,7 @@ dev = [
 ]
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/orbital_mechanics"]
+packages = ["src/polaris"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

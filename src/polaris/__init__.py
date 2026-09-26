@@ -1,29 +1,29 @@
 """
-orbital_mechanics
+polaris
 
 A Python library for orbital mechanics, mission design, and trajectory
 optimization.
 """
-from orbital_mechanics.core.state import State, OrbitalElements, elements_to_state
-from orbital_mechanics.maneuvers.lambert import solve_lambert, lambert
-from orbital_mechanics.maneuvers.flyby import (
+from polaris.core.state import State, OrbitalElements, elements_to_state
+from polaris.maneuvers.lambert import solve_lambert, lambert
+from polaris.maneuvers.flyby import (
     FlybyResult,
     solve_flyby,
     compute_flyby_turn_angle,
     compute_max_turn_angle,
     compute_flyby_periapsis,
 )
-from orbital_mechanics.maneuvers.dsm import (
+from polaris.maneuvers.dsm import (
     DSMTransfer,
     solve_dsm_leg,
 )
-from orbital_mechanics.ephemeris.horizons import get_body_state, parse_epoch, clear_ephemeris_cache
-from orbital_mechanics.transfers.single_leg import SingleLegTransfer, solve_single_leg
-from orbital_mechanics.transfers.multi_leg import MGATrajectory, solve_mga_trajectory, get_body_params
-from orbital_mechanics.transfers.porkchop import PorkchopResult, generate_porkchop
-from orbital_mechanics.optimization.mga_optimizer import MGAOptimizationResult, optimize_mga_epochs
-from orbital_mechanics.bridges.gmat import export_to_gmat_script
-from orbital_mechanics.constants import (
+from polaris.ephemeris.horizons import get_body_state, parse_epoch, clear_ephemeris_cache
+from polaris.transfers.single_leg import SingleLegTransfer, solve_single_leg
+from polaris.transfers.multi_leg import MGATrajectory, solve_mga_trajectory, get_body_params
+from polaris.transfers.porkchop import PorkchopResult, generate_porkchop
+from polaris.optimization.mga_optimizer import MGAOptimizationResult, optimize_mga_epochs
+from polaris.bridges.gmat import export_to_gmat_script
+from polaris.constants import (
     MU_EARTH,
     MU_SUN,
     MU_MARS,

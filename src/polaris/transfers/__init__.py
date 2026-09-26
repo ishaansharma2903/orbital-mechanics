@@ -3,16 +3,16 @@ transfers
 
 Interplanetary trajectory transfer modules.
 """
-from orbital_mechanics.transfers.single_leg import (
+from polaris.transfers.single_leg import (
     SingleLegTransfer,
     solve_single_leg,
 )
-from orbital_mechanics.transfers.multi_leg import (
+from polaris.transfers.multi_leg import (
     MGATrajectory,
     solve_mga_trajectory,
     get_body_params,
 )
-from orbital_mechanics.transfers.porkchop import (
+from polaris.transfers.porkchop import (
     PorkchopResult,
     generate_porkchop,
 )

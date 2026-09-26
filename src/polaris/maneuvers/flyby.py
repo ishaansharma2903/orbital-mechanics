@@ -8,7 +8,7 @@ required periapsis radii, and checks feasibility against minimum safe altitudes.
 from dataclasses import dataclass
 import numpy as np
 
-from orbital_mechanics.constants import EPSILON
+from polaris.constants import EPSILON
 
 
 @dataclass(frozen=True)

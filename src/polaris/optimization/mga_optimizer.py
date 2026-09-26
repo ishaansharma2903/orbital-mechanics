@@ -13,13 +13,13 @@ from scipy.optimize import minimize
 from scipy.interpolate import CubicSpline
 from astropy.time import Time
 
-from orbital_mechanics.constants import MU_SUN
-from orbital_mechanics.core.state import State
-from orbital_mechanics.ephemeris.horizons import parse_epoch, get_body_states_batch
-from orbital_mechanics.maneuvers.dsm import solve_dsm_leg, DSMTransfer
-from orbital_mechanics.maneuvers.flyby import solve_flyby
-from orbital_mechanics.transfers.single_leg import solve_single_leg
-from orbital_mechanics.transfers.multi_leg import (
+from polaris.constants import MU_SUN
+from polaris.core.state import State
+from polaris.ephemeris.horizons import parse_epoch, get_body_states_batch
+from polaris.maneuvers.dsm import solve_dsm_leg, DSMTransfer
+from polaris.maneuvers.flyby import solve_flyby
+from polaris.transfers.single_leg import solve_single_leg
+from polaris.transfers.multi_leg import (
     MGATrajectory,
     solve_mga_trajectory,
     get_body_params,

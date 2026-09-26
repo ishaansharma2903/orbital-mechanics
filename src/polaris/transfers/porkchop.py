@@ -11,9 +11,9 @@ from typing import Optional, Tuple, Union
 import datetime
 import numpy as np
 
-from orbital_mechanics.constants import MU_SUN, DAY_TO_SEC
-from orbital_mechanics.ephemeris.horizons import parse_epoch, get_body_states_batch
-from orbital_mechanics.maneuvers.lambert import solve_lambert
+from polaris.constants import MU_SUN, DAY_TO_SEC
+from polaris.ephemeris.horizons import parse_epoch, get_body_states_batch
+from polaris.maneuvers.lambert import solve_lambert
 
 
 @dataclass(frozen=True)

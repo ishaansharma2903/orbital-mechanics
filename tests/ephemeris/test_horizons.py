@@ -8,9 +8,9 @@ import pytest
 import numpy as np
 from astropy.time import Time
 
-from orbital_mechanics.constants import AU
-from orbital_mechanics.core.state import State
-from orbital_mechanics.ephemeris.horizons import (
+from polaris.constants import AU
+from polaris.core.state import State
+from polaris.ephemeris.horizons import (
     get_body_state,
     parse_epoch,
     clear_ephemeris_cache,
@@ -151,7 +151,7 @@ def test_get_body_state_mock(monkeypatch):
         def vectors(self, *args, **kwargs):
             return mock_table
 
-    monkeypatch.setattr("orbital_mechanics.ephemeris.horizons.Horizons", MockHorizons)
+    monkeypatch.setattr("polaris.ephemeris.horizons.Horizons", MockHorizons)
     clear_ephemeris_cache()
 
     st = get_body_state("earth", "2020-01-01")
@@ -171,7 +171,7 @@ def test_get_body_state_empty_vectors_raises(monkeypatch):
         def vectors(self, *args, **kwargs):
             return mock_table
 
-    monkeypatch.setattr("orbital_mechanics.ephemeris.horizons.Horizons", MockEmptyHorizons)
+    monkeypatch.setattr("polaris.ephemeris.horizons.Horizons", MockEmptyHorizons)
     clear_ephemeris_cache()
 
     with pytest.raises(ValueError, match="No ephemeris data"):

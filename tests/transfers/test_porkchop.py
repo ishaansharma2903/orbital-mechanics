@@ -6,13 +6,13 @@ Unit and validation tests for launch window porkchop plots.
 import pytest
 import numpy as np
 
-from orbital_mechanics.constants import (
+from polaris.constants import (
     MU_EARTH,
     MU_MARS,
     R_EARTH,
     R_MARS,
 )
-from orbital_mechanics.transfers.porkchop import PorkchopResult, generate_porkchop
+from polaris.transfers.porkchop import PorkchopResult, generate_porkchop
 
 
 def test_generate_porkchop_earth_mars_2020():
