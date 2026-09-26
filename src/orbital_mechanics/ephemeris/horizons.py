@@ -6,7 +6,7 @@ Queries positions and velocities at arbitrary epochs, converts to standard
 library units (km, km/s), and returns immutable State instances.
 """
 from functools import lru_cache
-from typing import Dict, Union, Optional
+from typing import Dict, Union, Optional, List
 import datetime
 import numpy as np
 from astropy.time import Time
@@ -171,6 +171,47 @@ def get_body_state(
     vel_kms = np.array([vx_aud, vy_aud, vz_aud], dtype=float) * (AU / DAY_TO_SEC)
 
     return State(position=pos_km, velocity=vel_kms)
+
+
+def get_body_states_batch(
+    body: Union[str, int],
+    epochs: Union[List[Union[float, int, str, datetime.date, datetime.datetime, Time]], np.ndarray],
+    center: Union[str, int] = "sun",
+    refplane: str = "ecliptic",
+) -> List[State]:
+    """
+    Retrieve Cartesian States of a celestial body across multiple epochs in a
+    single batch Horizons query.
+
+    Parameters:
+        body: Body name or ID.
+        epochs: Sequence of epochs.
+        center: Observer coordinate origin (default: 'sun').
+        refplane: Reference plane (default: 'ecliptic').
+
+    Returns:
+        List[State]: List of State instances corresponding to each epoch.
+    """
+    parsed_jds = [parse_epoch(ep) for ep in epochs]
+    if len(parsed_jds) == 0:
+        return []
+    if len(parsed_jds) == 1:
+        return [get_body_state(body, parsed_jds[0], center=center, refplane=refplane)]
+
+    target_id = _resolve_body_id(body)
+    location = _resolve_center_id(center)
+
+    obj = Horizons(id=target_id, location=location, epochs=parsed_jds)
+    vectors = obj.vectors(refplane=refplane)
+    if len(vectors) != len(parsed_jds):
+        raise ValueError(f"Horizons returned {len(vectors)} states for {len(parsed_jds)} requested epochs.")
+
+    states: List[State] = []
+    for row in vectors:
+        pos_km = np.array([float(row["x"]), float(row["y"]), float(row["z"])], dtype=float) * AU
+        vel_kms = np.array([float(row["vx"]), float(row["vy"]), float(row["vz"])], dtype=float) * (AU / DAY_TO_SEC)
+        states.append(State(position=pos_km, velocity=vel_kms))
+    return states
 
 
 def clear_ephemeris_cache() -> None:

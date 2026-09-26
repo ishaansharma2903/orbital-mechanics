@@ -19,6 +19,10 @@ from orbital_mechanics.maneuvers.dsm import (
 )
 from orbital_mechanics.ephemeris.horizons import get_body_state, parse_epoch, clear_ephemeris_cache
 from orbital_mechanics.transfers.single_leg import SingleLegTransfer, solve_single_leg
+from orbital_mechanics.transfers.multi_leg import MGATrajectory, solve_mga_trajectory, get_body_params
+from orbital_mechanics.transfers.porkchop import PorkchopResult, generate_porkchop
+from orbital_mechanics.optimization.mga_optimizer import MGAOptimizationResult, optimize_mga_epochs
+from orbital_mechanics.bridges.gmat import export_to_gmat_script
 from orbital_mechanics.constants import (
     MU_EARTH,
     MU_SUN,
@@ -54,6 +58,14 @@ __all__ = [
     "clear_ephemeris_cache",
     "SingleLegTransfer",
     "solve_single_leg",
+    "MGATrajectory",
+    "solve_mga_trajectory",
+    "get_body_params",
+    "PorkchopResult",
+    "generate_porkchop",
+    "MGAOptimizationResult",
+    "optimize_mga_epochs",
+    "export_to_gmat_script",
     "MU_EARTH",
     "MU_SUN",
     "MU_MARS",
