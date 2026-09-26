@@ -13,9 +13,9 @@ from scipy.optimize import minimize
 from scipy.interpolate import CubicSpline
 from astropy.time import Time
 
-from orbital_mechanics.constants import MU_SUN, DAY_TO_SEC
+from orbital_mechanics.constants import MU_SUN
 from orbital_mechanics.core.state import State
-from orbital_mechanics.ephemeris.horizons import parse_epoch, get_body_states_batch, get_body_state
+from orbital_mechanics.ephemeris.horizons import parse_epoch, get_body_states_batch
 from orbital_mechanics.maneuvers.dsm import solve_dsm_leg, DSMTransfer
 from orbital_mechanics.maneuvers.flyby import solve_flyby
 from orbital_mechanics.transfers.single_leg import solve_single_leg

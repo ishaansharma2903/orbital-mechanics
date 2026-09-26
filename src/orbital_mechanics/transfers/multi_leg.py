@@ -21,9 +21,7 @@ from orbital_mechanics.constants import (
     R_VENUS,
     R_MERCURY,
     R_MARS,
-    DAY_TO_SEC,
 )
-from orbital_mechanics.core.state import State
 from orbital_mechanics.ephemeris.horizons import parse_epoch, get_body_state
 from orbital_mechanics.maneuvers.dsm import DSMTransfer, solve_dsm_leg
 from orbital_mechanics.maneuvers.flyby import FlybyResult, solve_flyby

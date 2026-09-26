@@ -13,7 +13,7 @@ from astropy.time import Time
 
 from orbital_mechanics.constants import MU_SUN, DAY_TO_SEC
 from orbital_mechanics.core.state import State
-from orbital_mechanics.ephemeris.horizons import parse_epoch, get_body_state
+from orbital_mechanics.ephemeris.horizons import parse_epoch
 from orbital_mechanics.maneuvers.lambert import solve_lambert
 
 

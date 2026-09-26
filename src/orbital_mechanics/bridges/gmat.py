@@ -6,10 +6,8 @@ Generates syntactically valid GMAT (.script) files seeded with preliminary
 trajectory initial states, encounter epochs, and impulsive maneuvers (DSMs/flybys).
 """
 from typing import Optional, Union
-import numpy as np
 from astropy.time import Time
 
-from orbital_mechanics.ephemeris.horizons import parse_epoch
 from orbital_mechanics.transfers.single_leg import SingleLegTransfer
 from orbital_mechanics.maneuvers.dsm import DSMTransfer
 from orbital_mechanics.transfers.multi_leg import MGATrajectory

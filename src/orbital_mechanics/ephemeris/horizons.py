@@ -6,7 +6,7 @@ Queries positions and velocities at arbitrary epochs, converts to standard
 library units (km, km/s), and returns immutable State instances.
 """
 from functools import lru_cache
-from typing import Dict, Union, Optional, List
+from typing import Dict, Union, List
 import datetime
 import numpy as np
 from astropy.time import Time

@@ -10,10 +10,9 @@ from dataclasses import dataclass
 from typing import Optional, Tuple, Union
 import datetime
 import numpy as np
-from astropy.time import Time
 
 from orbital_mechanics.constants import MU_SUN, DAY_TO_SEC
-from orbital_mechanics.ephemeris.horizons import parse_epoch, get_body_state, get_body_states_batch
+from orbital_mechanics.ephemeris.horizons import parse_epoch, get_body_states_batch
 from orbital_mechanics.maneuvers.lambert import solve_lambert
 
 

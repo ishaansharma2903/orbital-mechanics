@@ -6,7 +6,6 @@ Calculates inbound/outbound hyperbolic excess velocity vectors, turning angles,
 required periapsis radii, and checks feasibility against minimum safe altitudes.
 """
 from dataclasses import dataclass
-from typing import Optional, Union
 import numpy as np
 
 from orbital_mechanics.constants import EPSILON

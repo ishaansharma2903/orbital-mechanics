@@ -7,7 +7,7 @@ to compute trajectory state vectors, hyperbolic excess velocities (v_inf),
 characteristic launch energy (C3), and impulsive delta-v budgets.
 """
 from dataclasses import dataclass
-from typing import Union, Optional
+from typing import Union
 import datetime
 import numpy as np
 from astropy.time import Time
